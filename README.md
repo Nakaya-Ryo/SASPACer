@@ -1,2 +1,9 @@
 # SASPACer
 A SAS package to help creating SAS packages
+
+## %ex2pac() : excel to package
+1. Put information of SAS package you want to create into **an excel file**
+2. %ex2pac(excel_file, package_location) will convert the excel into SAS package folders and files including %generatePackage() at the end
+   (Use template_package_meta.xlsx)
+
+**This allows you to create SAS packages via simple format of excel!**
