@@ -1,7 +1,7 @@
 # SASPACer
 A SAS package to help creating SAS packages
 
-![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo.png)
+![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
 
 ## %ex2pac() : excel to package
 1. Put information of SAS package you want to create into **an excel file**
