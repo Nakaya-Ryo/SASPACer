@@ -27,11 +27,13 @@ SAS package folders and files.
 	5. Create sas files based on information described in each excel sheet
 	6. Run %generatePackages()
 
+
 - Sample code
+~~~sas
 %ex2pac(
 	excel_file=C:\Temp\template_package_meta.xlsx,
-	package_location=C:\Temp\SAS_PACKAGES\packages) ;
-
+	package_location=C:\Temp\SAS_PACKAGES\packages)
+~~~
 
 *//*** HELP END ***/
 
