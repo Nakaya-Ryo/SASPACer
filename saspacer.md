@@ -2,33 +2,33 @@
   
 ----------------------------------------------------------------
  
- *SASPACer to create SAS package using meta excel file* 
+ *SASPACer to create SAS package using excel file* 
   
 ----------------------------------------------------------------
  
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.0.1
-- Generated: 2025-04-18T16:25:00
+- Version: 0.0.2
+- Generated: 2025-04-20T10:54:21
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*2DADD4E4B8243B353174C200908B95924405B45067ADDA64293804CB7462F01B` for this version
-- Content SHA256: `C*52522B2D882826755C8FE37CE0A22C32827F9245188D4679F6FA8C6102166B58` for this version
+- File SHA256: `F*83EE467BC80BEF59FE28BA6D05EE4F477EB83B3AFCDC9240BC87814A9302941B` for this version
+- Content SHA256: `C*9A4AE5EC7D58FEC6631953BCC5AC26D98F914820274D6B1529B1BBB7D3025530` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.0.1`;
+# The `SASPACer` package, version: `0.0.2`;
   
 ---
  
 
 ### SASPACer ###
-This is a package easily to create SAS packages.
-Only you need is to fill package information in the template excel.
-SASPACer has a function(ex2pac) to convert excel with package information into
-SAS package folders and files.
+This is a package for easily creating SAS packages.
+Only you need is to fill package information in the template excel (you can find it in additional contents(addcnt.zip)).
+SASPACer has a function(%ex2pac()) to convert excel with package information into
+SAS package folders and files, and generate SAS package using %generatePackage().
 
   
 ---
@@ -41,6 +41,12 @@ Required SAS Components:
   
 ---
  
+  
+---
+ 
+Package contains additional content, run:  `%loadPackageAddCnt(SASPACer)`  to load it
+or look for the `saspacer_AdditionalContent` directory in the `packages` fileref
+localization (only if additional content was deployed during the installation process).
  
 --------------------------------------------------------------------
  
@@ -87,11 +93,13 @@ SAS package folders and files.
 	5. Create sas files based on information described in each excel sheet
 	6. Run %generatePackages()
 
+
 - Sample code
+~~~sas
 %ex2pac(
 	excel_file=C:\Temp\template_package_meta.xlsx,
-	package_location=C:\Temp\SAS_PACKAGES\packages) ;
-
+	package_location=C:\Temp\SAS_PACKAGES\packages)
+~~~
 
   
 ---
