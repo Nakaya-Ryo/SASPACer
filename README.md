@@ -9,3 +9,9 @@ A SAS package to help creating SAS packages
    (Use template_package_meta.xlsx)
 
 **This allows you to create SAS packages via simple format of excel!**
+
+# What is SAS Packages?
+SASPACer is built on top of **SAS Packages framework(SPF)** created by Bartosz Jablonski.  
+For more on SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).
+You can find more SAS Packages(SASPAC) in [SASPAC](https://github.com/SASPAC).
+
