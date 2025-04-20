@@ -9,26 +9,27 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.0.2
-- Generated: 2025-04-20T10:54:21
+- Version: 0.0.3
+- Generated: 2025-04-20T17:54:48
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*83EE467BC80BEF59FE28BA6D05EE4F477EB83B3AFCDC9240BC87814A9302941B` for this version
-- Content SHA256: `C*9A4AE5EC7D58FEC6631953BCC5AC26D98F914820274D6B1529B1BBB7D3025530` for this version
+- File SHA256: `F*A418BE3A487444119B51BE94FDEC16A0834689C36CF1A4A5D6DBF62C34733160` for this version
+- Content SHA256: `C*10D40391C73205C995A2B4F9A667322143D70ACCB6C13567649DB3502850C865` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.0.2`;
+# The `SASPACer` package, version: `0.0.3`;
   
 ---
  
 
 ### SASPACer ###
 This is a package for easily creating SAS packages.
-Only you need is to fill package information in the template excel (you can find it in additional contents(addcnt.zip)).
+Only you need is to fill package information in the template excel (you can find in additional contents(addcnt.zip)).
 SASPACer has a function(%ex2pac()) to convert excel with package information into
 SAS package folders and files, and generate SAS package using %generatePackage().
+(%generatePackage() is optional but executed by default)
 
   
 ---
@@ -58,9 +59,12 @@ localization (only if additional content was deployed during the installation pr
 The `SASPACer` package consists of the following content:
  
 1. [`%ex2pac()` macro ](#ex2pac-macros-1 )
+2. [`%ex2pac_allname()` macro ](#ex2pacallname-macros-2 )
+3. [`%ex2pac_allsheet()` macro ](#ex2pacallsheet-macros-3 )
+4. [`%ex2pac_set_slash()` macro ](#ex2pacsetslash-macros-4 )
   
  
-2. [License note](#license)
+5. [License note](#license)
   
 ---
  
@@ -75,9 +79,12 @@ SAS package folders and files.
 	package_location :
 		location where package files to be stored.
 		Subfolder named package name will be created under the location.
+	complete_generation (default=Y) :
+		If user want to create only package structure, please change complete_generation=N.
+		By default, %ex2pac execute %generatePackage() to create .zip and .md.
 
 - Excel file to read
-	Easy to understand the structure. Take a look at it anyway.
+	Easy to understand the structure. Take a look anyway.
 	In sheets like macros, %ex2pac uses body information if body column is filled,
 	while refers file in location column if body column is blank.
 	(This is a situation where macros(or other files) were already created somewhere in a file and
@@ -93,13 +100,51 @@ SAS package folders and files.
 	5. Create sas files based on information described in each excel sheet
 	6. Run %generatePackages()
 
-
 - Sample code
 ~~~sas
 %ex2pac(
 	excel_file=C:\Temp\template_package_meta.xlsx,
-	package_location=C:\Temp\SAS_PACKAGES\packages)
+	package_location=C:\Temp\SAS_PACKAGES\packages,
+	complete_generation=Y)
 ~~~
+
+- Note
+  1. %ex2pac expects the operating system to be either Windows or a non-Windows environment
+  (such as Linux, Unix, etc.). The %SYSSCP macro variable is used to identify the current OS.
+  2. Libref named e2p_xls is used in the macro.
+  3. Max length of 32767bytes is the limit in both cells in excel and reference file(.sas) in location column
+  due to limitations in excel cell max length and max length of SAS variables used in the macro.
+
+  
+---
+ 
+## `%ex2pac_allname()` macro <a name="ex2pacallname-macros-2"></a> ######
+
+This is temporary macro used in %ex2pac.
+(Called in %ex2pac_allsheet macro)
+
+Purpose:
+To create contents in xxx.sas reading excel sheet.
+
+  
+---
+ 
+## `%ex2pac_allsheet()` macro <a name="ex2pacallsheet-macros-3"></a> ######
+
+This is temporary macro used in %ex2pac.
+
+Purpose:
+To create sheets.
+
+  
+---
+ 
+## `%ex2pac_set_slash()` macro <a name="ex2pacsetslash-macros-4"></a> ######
+
+This is temporary macro used in %ex2pac.
+
+Purpose:
+To switch sepalator character(slash or back slash) based on OS.
 
   
 ---
