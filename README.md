@@ -13,8 +13,8 @@ A SAS package to help creating SAS packages
 **This allows you to create SAS packages via simple format of excel!**
 
 ## version history
-0.0.3(20April2025): Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)
-0.0.2(20April2025): Minor updates<br>
+0.0.3(20April2025): Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
+0.0.2(20April2025): Minor updates  
 0.0.1(13April2025): Initial version
 
 ## What is SAS Packages?
