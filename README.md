@@ -42,7 +42,7 @@ filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main
 %installPackage(SASPACer, sourcePath=https://github.com/Nakaya-Ryo/SASPACer/raw/main/)   /* Install SASPACer to your place */
 %loadPackage(SASPACer)
 
-/* Enjoy SASPACer !! */
+/* Enjoy SASPACer😁 */
 %ex2pac(
 	excel_file=C:\Temp\template_package_meta.xlsx,
 	package_location=C:\Temp\SAS_PACKAGES\packages,
