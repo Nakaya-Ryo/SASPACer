@@ -21,7 +21,7 @@ Sample code:
 ## %pac2ex() : package to excel
 Under construction, stay tuned!
 
-## version history
+## Version history
 0.0.3(20April2025): Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
 0.0.2(20April2025): Minor updates  
 0.0.1(13April2025): Initial version
