@@ -7,7 +7,7 @@ A SAS package to help creating SAS packages
 
 ## %ex2pac() : excel to package
 1. **Put information** of SAS package you want to create **into an excel file** <br>(you can find template file in ./SASPACer/addcnt)
-2. %ex2pac(excel_file, package_location, complete_generation) will convert the excel(Use template_package_meta.xlsx) into SAS package structure(folders and files) and %generatePackage() (optional) at the end
+2. %ex2pac(excel_file, package_location, complete_generation) will convert the excel into SAS package structure(folders and files) and execute %generatePackage() (optional) to package zip file
 
 Sample code:
 ~~~sas
@@ -31,7 +31,7 @@ SASPACer is built on top of **SAS Packages framework(SPF)** developed by Bartosz
 For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).<br>
 You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
 
-## How to use SASPACer
+## How to use SASPACer? (quick start)
 ~~~sas
 /* Preparation to use SPF(core of SASPAC) */
 filename packages "/path/to/your/folder";   /* OK for Win/Unix/Linux */
