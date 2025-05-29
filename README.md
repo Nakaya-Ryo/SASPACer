@@ -12,7 +12,7 @@ A SAS package to help creating SAS packages
 Sample code:
 ~~~sas
 %ex2pac(
-	excel_file=C:\Temp\template_package_meta.xlsx,   /* Path of input excel file */
+	excel_file=C:\Temp\template_package.xlsx,   /* Path of input excel file */
 	package_location=C:\Temp\SAS_PACKAGES\packages,   /* Output path */
 	complete_generation=Y)   /* Set Y(default) to execute %generagePackage() for completion */
 ~~~
