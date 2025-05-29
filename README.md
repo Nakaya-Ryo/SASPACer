@@ -41,7 +41,7 @@ filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main
 ~~~
 
 ## Version history
-0.0.4(29May2025)	: Codes were brushed up and enhanced documents 
+0.0.4(29May2025)	: Codes were brushed up and enhanced documents  
 0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
 0.0.2(20April2025)	: Minor updates  
 0.0.1(13April2025)	: Initial version
