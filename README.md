@@ -35,7 +35,7 @@ You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASP
 ## How to use SASPACer? (quick start)
 ~~~sas
 /* Preparation to use SPF(core of SASPAC) */
-filename packages "/path/to/your/folder";   /* OK for Win/Unix/Linux */
+filename packages "\path\to\your\folder";
 filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main/SPF/SPFinit.sas";   /* SPF */
 %include SPFinit;   /* include SPF */
 
@@ -45,7 +45,7 @@ filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main
 
 /* Enjoy SASPACer😁 */
 %ex2pac(
-	excel_file=C:\Temp\template_package_meta.xlsx,
+	excel_file=C:\Temp\simple_example.xlsx,
 	package_location=C:\Temp\SAS_PACKAGES\packages,
 	complete_generation=Y
 )
