@@ -1,26 +1,31 @@
 /*** HELP START ***//*
 
-%ex2pac is a macro to convert excel with package information into
+`%ex2pac` is a macro to convert excel with package information into
 SAS package folders and files.
 
-- Parameters
-	excel_file :
-		full path for excel file which contains package information
-	package_location :
-		location where package files to be stored.
-		Subfolder named package name will be created under the location.
-	complete_generation (default=Y) :
-		If user want to create only package structure, please change complete_generation=N.
-		By default, %ex2pac execute %generatePackage() to create .zip and .md.
+### Parameters
+	- `excel_file` : full path for excel file which contains package information
 
-- Excel file to read
+	- `package_location` : location where package files to be stored.
+		                     Subfolder named package name will be created 
+                         under the location.
+
+	- `complete_generation` (default=Y) : If user want to create only package structure, 
+                                        please change complete_generation=N.
+		                                    By default, `%ex2pac` execute `%generatePackage()` 
+                                        to create .zip and .md.
+
+
+### Excel file to read
+
 	Easy to understand the structure. Take a look anyway.
-	In sheets like macros, %ex2pac uses body information if body column is filled,
+	In sheets like macros, the `%ex2pac` uses body information if body column is filled,
 	while refers file in location column if body column is blank.
 	(This is a situation where macros(or other files) were already created somewhere in a file and
 	would like to use it instead of copying contents in body column of the excel.)
 
-- Flow of the macro
+
+### Flow of the `%ex2pac` macro
 	1. Create package subfolder in the location.
 		Name of the subfolder will be set as the package name.
 	2. Create description.sas
@@ -30,32 +35,37 @@ SAS package folders and files.
 	5. Create sas files based on information described in each excel sheet
 	6. Run %generatePackages()
 
-- Sample code
+### Sample code
+
 ~~~sas
 %ex2pac(
-	excel_file=C:\Temp\template_package_meta.xlsx,
+	excel_file=C:\Temp\template_package.xlsx,
 	package_location=C:\Temp\SAS_PACKAGES\packages,
 	complete_generation=Y)
 ~~~
 
-- Note
-  1. %ex2pac expects the operating system to be either Windows or a non-Windows environment
-  (such as Linux, Unix, etc.). The %SYSSCP macro variable is used to identify the current OS.
-  2. Libref named e2p_xls is used in the macro.
-  3. Max length of 32767bytes is the limit in both cells in excel and reference file(.sas) in location column
+### Note:
+  1. `%ex2pac` expects the operating system to be either Windows or a non-Windows environment
+  (such as Linux, Unix, etc.). The `&SYSSCP` macro variable is used to identify the current OS.
+  Only tested in Windows.
+
+  2. Libref named `e2p_xls` is used in the macro.
+  3. Max length of 32767 bytes is the limit in both cells in excel and reference file(.sas) in location column
   due to limitations in excel cell max length and max length of SAS variables used in the macro.
+
+---
 
 *//*** HELP END ***/
 
-%macro ex2pac(excel_file=, package_location=, complete_generation=Y) ;
+%macro ex2pac(excel_file=, package_location=, complete_generation=Y) / minoperator;
 
 /* Call macro to switch separator by OS(Win or other) */
-%ex2pac_set_slash
+%ex2pac_set_slash()
 
 /* Check if excel file exists */
 data _null_;
-	length excel $512 rc 8;
-	excel = "&excel_file.";
+	length excel $2048 rc 8;
+	excel = symget("excel_file");
 	rc = filename('fileref', excel);
 	if fexist('fileref') = 0 then do;
 		put "ERROR: Excel file not found. Stopping macro.";
@@ -70,8 +80,8 @@ run;
 
 /* Check if package_location folder exists */
 data _null_;
-	length loc $512 rc 8;
-	loc = "&package_location.";
+	length loc $2048 rc 8;
+	loc = symget("package_location");
 
 	rc = filename('mypath', loc);
 	did = dopen('mypath');
@@ -195,13 +205,13 @@ data _null_;/*put sheet names in macro variables*/
     call symputx('count_sheet', n, 'L');/* number of sheets */
 run;
 
-%ex2pac_allsheet(count_sheet=&count_sheet.);
+%ex2pac_allsheet(count_sheet=&count_sheet.)
 
 /*Generate package*/
-%if &complete_generation.=Y %then %do ;
+%if %superq(complete_generation) in (Y y) %then %do ;
 	%generatePackage(filesLocation=&packagepath. ,markdownDoc=1)
 %end ;
 %else %do ;
-	%put NOTE: Only package structure was created. Please create package file(.zip and .md) using %nrstr(%generatePackage). ;
+	%put NOTE: Only package structure was created. Please create package file(.zip and .md) using %nrstr(%generatePackage()) macro. ;
 %end ;
 %mend ;
