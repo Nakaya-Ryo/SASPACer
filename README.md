@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.0.3 on 20April2025)
+# SASPACer (latest version 0.0.4 on 29May2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -22,9 +22,10 @@ Sample code:
 Under construction, stay tuned!
 
 ## Version history
-0.0.3(20April2025): Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
-0.0.2(20April2025): Minor updates  
-0.0.1(13April2025): Initial version
+0.0.4(29May2025)	: Codes were brushed up and enhanced documents 
+0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
+0.0.2(20April2025)	: Minor updates  
+0.0.1(13April2025)	: Initial version
 
 ## What is SAS Packages?
 SASPACer is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
