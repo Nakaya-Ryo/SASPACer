@@ -21,17 +21,6 @@ Sample code:
 ## %pac2ex() : package to excel
 Under construction, stay tuned!
 
-## Version history
-0.0.4(29May2025)	: Codes were brushed up and enhanced documents 
-0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
-0.0.2(20April2025)	: Minor updates  
-0.0.1(13April2025)	: Initial version
-
-## What is SAS Packages?
-SASPACer is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
-For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).<br>
-You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
-
 ## How to use SASPACer? (quick start)
 ~~~sas
 /* Preparation to use SPF(core of SASPAC) */
@@ -50,4 +39,16 @@ filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main
 	complete_generation=Y
 )
 ~~~
+
+## Version history
+0.0.4(29May2025)	: Codes were brushed up and enhanced documents 
+0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
+0.0.2(20April2025)	: Minor updates  
+0.0.1(13April2025)	: Initial version
+
+## What is SAS Packages?
+SASPACer is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
+For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).<br>
+You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
+
 
