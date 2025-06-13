@@ -24,7 +24,7 @@ Under construction, stay tuned!
 ## How to use SASPACer? (quick start)
 Create directory for your packages and assign a fileref to it.
 ~~~sas
-filename packages "\path\to\your\folder";
+filename packages "\path\to\your\packages";
 ~~~
  
 Enable the SAS Packages Framework (if you have not done it yet):
