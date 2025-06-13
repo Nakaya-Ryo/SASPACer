@@ -22,21 +22,32 @@ Sample code:
 Under construction, stay tuned!
 
 ## How to use SASPACer? (quick start)
+Create directory for your packages and assign a fileref to it.
 ~~~sas
-/* Preparation to use SPF(core of SASPAC) */
 filename packages "\path\to\your\folder";
-filename SPFinit url "https://raw.githubusercontent.com/yabwon/SAS_PACKAGES/main/SPF/SPFinit.sas";   /* SPF */
-%include SPFinit;   /* include SPF */
-
+~~~
+ 
+Enable the SAS Packages Framework (if you have not done it yet):
+~~~sas
+%include packages(SPFinit.sas)
+~~~
+ 
+(If you don't have SAS Packages Framework installed follow the [instruction](https://github.com/yabwon/HoW-SASPackages/blob/main/Share%20your%20code%20with%20SAS%20Packages%20-%20a%20Hands-on-Workshop.md#how-to-install-the-sas-packages-framework).)
+ 
+ 
+When you have SAS Packages Framework enabled, run the following to install and load the package:
+ 
+~~~sas
+ 
 /* Install and load SASPACer */
 %installPackage(SASPACer, sourcePath=https://github.com/Nakaya-Ryo/SASPACer/raw/main/)   /* Install SASPACer to your place */
 %loadPackage(SASPACer)
-
-/* Enjoy SASPACer😁 */
+ 
+/* Enjoy SASPACer😄 */
 %ex2pac(
-	excel_file=C:\Temp\simple_example.xlsx,
-	package_location=C:\Temp\SAS_PACKAGES\packages,
-	complete_generation=Y
+  excel_file=C:\Temp\simple_example.xlsx,
+  package_location=C:\Temp\SAS_PACKAGES\packages,
+  complete_generation=Y
 )
 ~~~
 
