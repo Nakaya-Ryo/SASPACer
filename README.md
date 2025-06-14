@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.0.4 on 29May2025)
+# SASPACer (latest version 0.0.5 on 14June2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -50,8 +50,12 @@ When you have SAS Packages Framework enabled, run the following to install and l
   complete_generation=Y
 )
 ~~~
+You can learn from the following training materials by Bartosz Jablonski for source files and folders structure of SAS packages.  
+[My first SAS Package -a How To](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)   
+[SAS Packages - The Way To Share (a How To)](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)
 
 ## Version history
+0.0.5(14June2025)	: easyArch=1 was set in %generatePackage() used in complete_generation=Y  
 0.0.4(29May2025)	: Codes were brushed up and enhanced documents  
 0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
 0.0.2(20April2025)	: Minor updates  
@@ -59,7 +63,7 @@ When you have SAS Packages Framework enabled, run the following to install and l
 
 ## What is SAS Packages?
 SASPACer is built on top of **SAS Packages framework(SPF)** developed by Bartosz Jablonski.  
-For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).<br>
+For more information about SAS Packages framework, see [SAS_PACKAGES](https://github.com/yabwon/SAS_PACKAGES).  
 You can also find more SAS Packages(SASPACs) in [SASPAC](https://github.com/SASPAC).
 
 
