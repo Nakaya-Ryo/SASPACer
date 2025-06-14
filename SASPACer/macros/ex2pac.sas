@@ -8,11 +8,11 @@ SAS package folders and files.
 
 	- `package_location` : location where package files to be stored.
 		                     Subfolder named package name will be created 
-                         under the location.
+                             under the location.
 
 	- `complete_generation` (default=Y) : If user want to create only package structure, 
                                         please change complete_generation=N.
-		                                    By default, `%ex2pac` execute `%generatePackage()` 
+		                                By default, `%ex2pac` execute `%generatePackage()` 
                                         to create .zip and .md.
 
 
@@ -209,7 +209,7 @@ run;
 
 /*Generate package*/
 %if %superq(complete_generation) in (Y y) %then %do ;
-	%generatePackage(filesLocation=&packagepath. ,markdownDoc=1)
+	%generatePackage(filesLocation=&packagepath. ,markdownDoc=1,easyArch=1)
 %end ;
 %else %do ;
 	%put NOTE: Only package structure was created. Please create package file(.zip and .md) using %nrstr(%generatePackage()) macro. ;
