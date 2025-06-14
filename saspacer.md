@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.0.4
-- Generated: 2025-05-29T22:16:32
+- Version: 0.0.5
+- Generated: 2025-06-14T13:33:13
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*3908F42919BAF8B09081E7D33CCD32E0E24D8662D9EA0658151C1E8D5A4BD300` for this version
-- Content SHA256: `C*37E1ADB4176F45723A0FCEFB96C78332A3AB87D094C6014498A0B66C7D14872E` for this version
+- File SHA256: `F*46E64B6ED1E253D019884E9DCE363198550004C5C242D6B7FA329061EC6FC530` for this version
+- Content SHA256: `C*5A85A4001508C7C659D3BFB21841E69EA72337261C03C5CF682C1AB40EEC9490` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.0.4`;
+# The `SASPACer` package, version: `0.0.5`;
   
 ---
  
@@ -89,11 +89,11 @@ SAS package folders and files.
 
 	- `package_location` : location where package files to be stored.
 		                     Subfolder named package name will be created 
-                         under the location.
+                             under the location.
 
 	- `complete_generation` (default=Y) : If user want to create only package structure, 
                                         please change complete_generation=N.
-		                                    By default, `%ex2pac` execute `%generatePackage()` 
+		                                By default, `%ex2pac` execute `%generatePackage()` 
                                         to create .zip and .md.
 
 
