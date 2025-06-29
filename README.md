@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.0.5 on 14June2025)
+# SASPACer (latest version 0.1.0 on 29June2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -55,7 +55,8 @@ You can learn from the following training materials by Bartosz Jablonski for sou
 [My first SAS Package -a How To](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)   
 [SAS Packages - The Way To Share (a How To)](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)
 
-## Version history
+## Version history  
+0.1.0(29June2025)	: Modified logic (overwriting existing package folder -> Stop with error message to clear up the existing package folder(user should empty the existing folder first))  
 0.0.5(14June2025)	: easyArch=1 was set in %generatePackage() used in complete_generation=Y  
 0.0.4(29May2025)	: Codes were brushed up and enhanced documents  
 0.0.3(20April2025)	: Bugs fixed and enhanced documents (separated internal macros, fixed bugs, limitations and notes added)  
