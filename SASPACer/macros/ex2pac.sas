@@ -126,18 +126,33 @@ data _null_;
 
 	/*Create subfolder*/
 	if did > 0 then do;
+	    n = dnum(did); /*number of members in the folder*/
+		if n > 0 then do;
+			put "ERROR: There are files and/or folders in the package folder: " full_path ".";
+			put "ERROR: Please make sure the package folder is empty, and then re-run SASPACer.";
+			call symputx("abort_flag", 1, 'L');
+		end;
+		else do;
+			put "NOTE: Package folder already exists but empty. SASPACer will use the folder.";
+			call symputx("abort_flag", 0, 'L');
+		end;
 		rc = dclose(did);
 		call symputx("packagepath", full_path, 'L');
-		put "NOTE: Subfolder already exists. Process aborted.";
 		stop;
 	end;
 	else do ;
+	    call symputx("abort_flag", 0, 'L');
 		rc = dcreate("&packagename", base_path);
-		if rc = '' then put "ERROR: Failed to create subfolder.";
-		else put "NOTE: Subfolder successfully created: ";
+		if rc = '' then put "ERROR: Failed to create package folder.";
+		else put "NOTE: Package folder was successfully created: ";
 	end ;
 	call symputx("packagepath", full_path, 'L');
 run;
+
+%if &abort_flag. %then %do; /*abort the macro if there is existing non-empty folder*/
+  %put ERROR: Aborted the macro.;
+  %return;
+%end;
 
 /* Create Description */
 proc import
