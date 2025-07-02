@@ -1,0 +1,12 @@
+name: Check TOKEN
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo token URL (safe)
+        run: |
+          echo "Testing URL: https://${{ secrets.TOKEN }}@github.com/PharmaForest/SASPACer.git" | sed 's/.\{10\}/&\n/g'
