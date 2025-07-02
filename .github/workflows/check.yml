@@ -1,4 +1,4 @@
-name: Check TOKEN
+name: Check TOKEN1
 
 on:
   workflow_dispatch:
