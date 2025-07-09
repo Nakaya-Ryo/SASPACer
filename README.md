@@ -28,7 +28,7 @@ You can learn from the following training materials by Bartosz Jablonski for sou
 Under construction, stay tuned!
 
 ## Version history  
-0.1.1(9July2025)	: Minor updates in excel templates and cosmetic change in license(no change in contents) 
+0.1.1(9July2025)	: Minor updates in excel templates and cosmetic change in license(no change in contents)  
 0.1.0(29June2025)	: Modified logic (overwriting existing package folder -> Stop with error message to clear up the existing package folder(user should empty the existing folder first))  
 0.0.5(14June2025)	: easyArch=1 was set in %generatePackage() used in complete_generation=Y  
 0.0.4(29May2025)	: Codes were brushed up and enhanced documents  
