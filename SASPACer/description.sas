@@ -1,7 +1,7 @@
 Type: Package
 Package: SASPACer
 Title: SASPACer to create SAS package using excel file
-Version: 0.1.0
+Version: 0.1.1
 Author: Ryo Nakaya (nakaya.ryou@gmail.com)
 Maintainer: Ryo Nakaya (nakaya.ryou@gmail.com)
 License: MIT
