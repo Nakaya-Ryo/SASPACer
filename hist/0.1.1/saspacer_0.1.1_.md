@@ -10,12 +10,12 @@
   
 - Package: SASPACer
 - Version: 0.1.1
-- Generated: 2025-07-09T23:28:09
+- Generated: 2025-07-09T23:43:52
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*87134C971E40A0DF32A849549747BEA046C2196EB009D091C01E1ADFC4ED3F4C` for this version
-- Content SHA256: `C*14FDF64F05816766CBA2D1E4ECF6DB614E57188B5B4B5F49E5FEED1FF8752AD3` for this version
+- File SHA256: `F*A38077B4BEA5FFC5727898BD66FE0082A998AE851861CE1BAFE0035F7098EF43` for this version
+- Content SHA256: `C*8A5517006B16AD2428A7DD76D7AE323035F3C5A643AC07306D1E8840B2309967` for this version
   
 ---
  
@@ -178,7 +178,7 @@ To switch sepalator character (slash or back slash) based on OS.
 	Copyright (c) [2025] [Ryo Nakaya]
 
   Permission is hereby granted, free of charge, to any person obtaining a copy  
-  of this software and associated documentation files (the "Software"), to deal 
+  of this software and associated documentation files (the "Software"), to deal  
   in the Software without restriction, including without limitation the rights  
   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     
   copies of the Software, and to permit persons to whom the Software is         
