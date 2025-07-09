@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.1.0 on 29June2025)
+# SASPACer (latest version 0.1.1 on 9July2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -28,6 +28,7 @@ You can learn from the following training materials by Bartosz Jablonski for sou
 Under construction, stay tuned!
 
 ## Version history  
+0.1.1(9July2025)	: Minor updates in excel templates  
 0.1.0(29June2025)	: Modified logic (overwriting existing package folder -> Stop with error message to clear up the existing package folder(user should empty the existing folder first))  
 0.0.5(14June2025)	: easyArch=1 was set in %generatePackage() used in complete_generation=Y  
 0.0.4(29May2025)	: Codes were brushed up and enhanced documents  
