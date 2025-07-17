@@ -8,7 +8,7 @@ A SAS package to help creating SAS packages
 **"サスパッカー"** in the logo stands for **SASPACer** in Japanese. The package is to help creating SAS packages. <br>Shaping onigiri(rice ball) by hands can be a bit challenging for beginners, but using onigiri mold makes it easy to form and provides a great introduction. Hope the mold(SASPACer) will help you to create your SAS package.
 
 ## %ex2pac() : excel to package
-1. **Put information** of SAS package you want to create **into an excel spreadsheet** <br>(you can find template file in ./SASPACer/addcnt)
+1. **Put information** of SAS package you want to create **into an excel spreadsheet** <br>(you can find template files in ./SASPACer/addcnt (simple_example.xlsx for simple example you can test as is, and template_package.xlsx for template contents for reference))
 ![excel](./excel_image.png)
 2. %ex2pac() will convert the excel spreadsheet into SAS package structure(folders and files) and execute %generatePackage() (optional) for package zip file
 
