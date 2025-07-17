@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.1.1 on 9July2025)
+# SASPACer (latest version 0.2.0 on 17July2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -24,10 +24,19 @@ You can learn from the following training materials by Bartosz Jablonski for sou
 [My first SAS Package -a How To](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)   
 [SAS Packages - The Way To Share (a How To)](https://github.com/yabwon/SAS_PACKAGES/blob/main/SPF/Documentation/SAS(r)%20packages%20-%20the%20way%20to%20share%20(a%20how%20to)-%20Paper%204725-2020%20-%20extended.pdf)  
 
-## %pac2ex() : package to excel
-Under construction, stay tuned!
+## %pac2ex() : package to excel  
+It's very simple. You can convert package zip file into excel file with package information.   
+
+Sample code:
+~~~sas
+%pac2ex(
+	zip_path=C:\Temp\packagename.zip,		/* Path of package zip file */
+	xls_path=C:\Temp\package_info.xlsx,		/* Output excel path */
+	kill=Y)						/* Set Y to delete all datasets in WORK (default is N) */
+~~~
 
 ## Version history  
+0.2.0(17July2025)	: Added %pac2ex()  
 0.1.1(9July2025)	: Minor updates in excel templates and cosmetic change in license(no change in contents)  
 0.1.0(29June2025)	: Modified logic (overwriting existing package folder -> Stop with error message to clear up the existing package folder(user should empty the existing folder first))  
 0.0.5(14June2025)	: easyArch=1 was set in %generatePackage() used in complete_generation=Y  
