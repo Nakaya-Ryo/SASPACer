@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.1.1
-- Generated: 2025-07-09T23:43:52
+- Version: 0.2.0
+- Generated: 2025-07-17T23:19:28
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*A38077B4BEA5FFC5727898BD66FE0082A998AE851861CE1BAFE0035F7098EF43` for this version
-- Content SHA256: `C*8A5517006B16AD2428A7DD76D7AE323035F3C5A643AC07306D1E8840B2309967` for this version
+- File SHA256: `F*AE53B492CE8F4AA0D71FEC746ABEBCCC30A95256CA2C08DA3FF674A7D066AD34` for this version
+- Content SHA256: `C*7FBA263CB082878699BB6211289C52754ED1F880E0ACC7C3FE4E65BB3E35DA40` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.1.1`;
+# The `SASPACer` package, version: `0.2.0`;
   
 ---
  
@@ -33,6 +33,12 @@ All you need is to fill package information in the template excel
 `SASPACer` has a macro(`%ex2pac()`) to convert excel with package information into
 SAS package folders and files, and generate SAS package using the `%generatePackage()`
 macro (the generation is optional but executed by default).
+
+macro(`%pac2ex()`) can convert package zip file into excel file with package information as well.
+
+list of macros:  
+- `%ex2pac()`  
+- `%pac2ex()`  
 
 ### References ###
 1. Bartosz Jablonski, "My First SAS Package - a How To", SGF Proceedings, Paper 1079-2021, 
@@ -73,9 +79,12 @@ The `SASPACer` package consists of the following content:
 2. [`%ex2pac_allname()` macro ](#ex2pacallname-macros-2 )
 3. [`%ex2pac_allsheet()` macro ](#ex2pacallsheet-macros-3 )
 4. [`%ex2pac_set_slash()` macro ](#ex2pacsetslash-macros-4 )
+5. [`%pac2ex()` macro ](#pac2ex-macros-5 )
+6. [`%pac2ex_contents()` macro ](#pac2excontents-macros-6 )
+7. [`%pac2ex_folder2sheet()` macro ](#pac2exfolder2sheet-macros-7 )
   
  
-5. [License note](#license)
+8. [License note](#license)
   
 ---
  
@@ -166,6 +175,50 @@ This is internal utility macro used in `%ex2pac`.
 
 Purpose:
 To switch sepalator character (slash or back slash) based on OS.
+
+  
+---
+ 
+## `%pac2ex()` macro <a name="pac2ex-macros-5"></a> ######
+
+`%pac2ex` is a macro to convert package zip file into
+excel file with package information.
+
+### Parameters
+	- `zip_path` : full path for package zip file
+
+	- `xls_path` : full path for excel file to output
+
+	- `kill` : Y for kill all datasets in WORK (default is N)
+
+### Sample code
+
+~~~sas
+%pac2ex(
+	zip_path=C:\Temp\packagename.zip,
+	xls_path=C:\Temp\package_info.xlsx,
+	kill=Y
+)
+~~~
+
+### Note:
+  Only tested in Windows.
+
+---
+
+  
+---
+ 
+## `%pac2ex_contents()` macro <a name="pac2excontents-macros-6"></a> ######
+
+This is internal utility macro used in `%pac2ex`.
+
+  
+---
+ 
+## `%pac2ex_folder2sheet()` macro <a name="pac2exfolder2sheet-macros-7"></a> ######
+
+This is internal utility macro used in `%pac2ex`.
 
   
 ---
