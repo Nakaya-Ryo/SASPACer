@@ -35,7 +35,7 @@ excel file with package information.
 %end;
 
 filename inzip zip "&zip_path";
-libname xlout excel "&xls_path";
+libname xlout xlsx "&xls_path";
 
 
 data _TMP01;
