@@ -116,12 +116,12 @@ data _null_ ;
 run ;
 
 data _null_;
-	length rc did full_path $512;
+	length rc1 did 8. rc2 full_path $512;
 
 	base_path = "&package_location.";
 	full_path = catx("&slash.", base_path, "&packagename");
 
-	rc = filename("subfldr", full_path);
+	rc1 = filename("subfldr", full_path);
 	did = dopen("subfldr");
 
 	/*Create subfolder*/
@@ -136,14 +136,14 @@ data _null_;
 			put "NOTE: Package folder already exists but empty. SASPACer will use the folder.";
 			call symputx("abort_flag", 0, 'L');
 		end;
-		rc = dclose(did);
+		rc1 = dclose(did);
 		call symputx("packagepath", full_path, 'L');
 		stop;
 	end;
 	else do ;
 	    call symputx("abort_flag", 0, 'L');
-		rc = dcreate("&packagename", base_path);
-		if rc = '' then put "ERROR: Failed to create package folder.";
+		rc2 = dcreate("&packagename", base_path);
+		if rc2 = '' then put "ERROR: Failed to create package folder.";
 		else put "NOTE: Package folder was successfully created: ";
 	end ;
 	call symputx("packagepath", full_path, 'L');

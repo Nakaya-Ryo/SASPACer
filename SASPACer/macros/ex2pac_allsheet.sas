@@ -10,7 +10,7 @@ To create sheets.
 /*--macro used in ex2pac--*/
 %macro ex2pac_allsheet(count_sheet=) ;
 %local j;
-%do j = 1 %to &count_sheet. ;
+%do j = 1 %to %eval(&count_sheet.) ;
 	proc import
 		datafile="&excel_file."
 	    out=work.sheet
