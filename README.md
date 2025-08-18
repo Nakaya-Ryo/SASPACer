@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.2.3 on 6August2025)
+# SASPACer (latest version 0.3.0 on 18August2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -36,6 +36,7 @@ Sample code:
 ~~~
 
 ## Version history  
+0.3.0(18August2025)	: AdditionalContents(addcnt) was modified (changed folder name in excel from "macros" to "macro")  
 0.2.3(6August2025)	: AdditionalContents(addcnt) was modified  
 0.2.2(4August2025)	: Polished code in %ex2pac()  
 0.2.1(29July2025)	: Changed excel engine to xlsx engine in %pac2ex()  
