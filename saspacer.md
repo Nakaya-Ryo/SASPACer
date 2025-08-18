@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.2.3
-- Generated: 2025-08-06T07:11:23
+- Version: 0.3.0
+- Generated: 2025-08-18T18:02:46
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*AB032E8C3415E3B8EDA55C3A2EB6D3BE9BECA2DC6E2AE98366EA263528FDFBB3` for this version
-- Content SHA256: `C*78BF29B43A5F12A567F01E92555FACDD58A9B334D975C600BFCD1D3FB6C2BB89` for this version
+- File SHA256: `F*71695EBE033DB4DADBE83432F45DB4E2EC07175FBFD291D60F06830FCB8F24BB` for this version
+- Content SHA256: `C*06195B7CD7534D3F34E352B65D9A48D42E32D67A3619FD35E457A4CCF41F9040` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.2.3`;
+# The `SASPACer` package, version: `0.3.0`;
   
 ---
  
@@ -75,20 +75,20 @@ localization (only if additional content was deployed during the installation pr
 # The `SASPACer` package content
 The `SASPACer` package consists of the following content:
  
-1. [`%ex2pac()` macro ](#ex2pac-macros-1 )
-2. [`%ex2pac_allname()` macro ](#ex2pacallname-macros-2 )
-3. [`%ex2pac_allsheet()` macro ](#ex2pacallsheet-macros-3 )
-4. [`%ex2pac_set_slash()` macro ](#ex2pacsetslash-macros-4 )
-5. [`%pac2ex()` macro ](#pac2ex-macros-5 )
-6. [`%pac2ex_contents()` macro ](#pac2excontents-macros-6 )
-7. [`%pac2ex_folder2sheet()` macro ](#pac2exfolder2sheet-macros-7 )
+1. [`%ex2pac()` macro ](#ex2pac-macro-1 )
+2. [`%ex2pac_allname()` macro ](#ex2pacallname-macro-2 )
+3. [`%ex2pac_allsheet()` macro ](#ex2pacallsheet-macro-3 )
+4. [`%ex2pac_set_slash()` macro ](#ex2pacsetslash-macro-4 )
+5. [`%pac2ex()` macro ](#pac2ex-macro-5 )
+6. [`%pac2ex_contents()` macro ](#pac2excontents-macro-6 )
+7. [`%pac2ex_folder2sheet()` macro ](#pac2exfolder2sheet-macro-7 )
   
  
 8. [License note](#license)
   
 ---
  
-## `%ex2pac()` macro <a name="ex2pac-macros-1"></a> ######
+## `%ex2pac()` macro <a name="ex2pac-macro-1"></a> ######
 
 `%ex2pac` is a macro to convert excel with package information into
 SAS package folders and files.
@@ -148,7 +148,7 @@ SAS package folders and files.
   
 ---
  
-## `%ex2pac_allname()` macro <a name="ex2pacallname-macros-2"></a> ######
+## `%ex2pac_allname()` macro <a name="ex2pacallname-macro-2"></a> ######
 
 This is internal utility macro used in `%ex2pac`.
 (Called in `%ex2pac_allsheet` macro)
@@ -159,7 +159,7 @@ To create contents in xxx.sas reading excel sheet.
   
 ---
  
-## `%ex2pac_allsheet()` macro <a name="ex2pacallsheet-macros-3"></a> ######
+## `%ex2pac_allsheet()` macro <a name="ex2pacallsheet-macro-3"></a> ######
 
 This is internal utility macro used in `%ex2pac`.
 
@@ -169,7 +169,7 @@ To create sheets.
   
 ---
  
-## `%ex2pac_set_slash()` macro <a name="ex2pacsetslash-macros-4"></a> ######
+## `%ex2pac_set_slash()` macro <a name="ex2pacsetslash-macro-4"></a> ######
 
 This is internal utility macro used in `%ex2pac`.
 
@@ -179,7 +179,7 @@ To switch sepalator character (slash or back slash) based on OS.
   
 ---
  
-## `%pac2ex()` macro <a name="pac2ex-macros-5"></a> ######
+## `%pac2ex()` macro <a name="pac2ex-macro-5"></a> ######
 
 `%pac2ex` is a macro to convert package zip file into
 excel file with package information.
@@ -209,14 +209,14 @@ excel file with package information.
   
 ---
  
-## `%pac2ex_contents()` macro <a name="pac2excontents-macros-6"></a> ######
+## `%pac2ex_contents()` macro <a name="pac2excontents-macro-6"></a> ######
 
 This is internal utility macro used in `%pac2ex`.
 
   
 ---
  
-## `%pac2ex_folder2sheet()` macro <a name="pac2exfolder2sheet-macros-7"></a> ######
+## `%pac2ex_folder2sheet()` macro <a name="pac2exfolder2sheet-macro-7"></a> ######
 
 This is internal utility macro used in `%pac2ex`.
 
