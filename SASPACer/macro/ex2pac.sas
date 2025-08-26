@@ -1,50 +1,53 @@
 /*** HELP START ***//*
 
-`%ex2pac` is a macro to convert excel with package information into
+`%ex2pac` is a macro to convert excel file with package information into
 SAS package folders and files.
 
 ### Parameters
-	- `excel_file` : full path for excel file which contains package information
 
-	- `package_location` : location where package files to be stored.
-		                     Subfolder named package name will be created 
-                             under the location.
+  - `excel_file` : full path for excel file which contains package information
 
-	- `complete_generation` (default=Y) : If user want to create only package structure, 
+  - `package_location` : location where package files to be stored.
+                               Subfolder named package name will be created
+                               under the location.
+
+  - `complete_generation` (default=Y) : If user want to create only package structure, 
                                         please change complete_generation=N.
-		                                By default, `%ex2pac` execute `%generatePackage()` 
+                                        By default, `%ex2pac` execute `%generatePackage()` 
                                         to create .zip and .md.
 
 
 ### Excel file to read
 
-	Easy to understand the structure. Take a look anyway.
-	In sheets like macros, the `%ex2pac` uses body information if body column is filled,
-	while refers file in location column if body column is blank.
-	(This is a situation where macros(or other files) were already created somewhere in a file and
-	would like to use it instead of copying contents in body column of the excel.)
+  Easy to understand the structure. Take a look anyway.
+  In sheets like macros, the `%ex2pac` uses body information if body column is filled,
+  while refers file in location column if body column is blank.
+  (This is a situation where macros(or other files) were already created somewhere in a file and
+  would like to use it instead of copying contents in body column of the excel.)
 
 
 ### Flow of the `%ex2pac` macro
-	1. Create package subfolder in the location.
-		Name of the subfolder will be set as the package name.
-	2. Create description.sas
-	3. Create license.sas
-	4. Create subfolders like 01_formats, 02_functions, etc. in reference to
-		the excel sheet names.
-	5. Create sas files based on information described in each excel sheet
-	6. Run %generatePackages()
+
+  1. Create package subfolder in the location.
+     Name of the subfolder will be set as the package name.
+  2. Create description.sas
+  3. Create license.sas
+  4. Create subfolders like 01_formats, 02_functions, etc. in reference to
+     the excel sheet names.
+  5. Create sas files based on information described in each excel sheet
+  6. Run `%generatePackages()`
 
 ### Sample code
 
 ~~~sas
 %ex2pac(
-	excel_file=C:\Temp\template_package.xlsx,
-	package_location=C:\Temp\SAS_PACKAGES\packages,
-	complete_generation=Y)
+  excel_file=C:\Temp\template_package.xlsx,
+  package_location=C:\Temp\SAS_PACKAGES\packages,
+  complete_generation=Y)
 ~~~
 
 ### Note:
+
   1. `%ex2pac` expects the operating system to be either Windows or a non-Windows environment
   (such as Linux, Unix, etc.). The `&SYSSCP` macro variable is used to identify the current OS.
   Only tested in Windows.
@@ -60,7 +63,8 @@ SAS package folders and files.
 %macro ex2pac(excel_file=, package_location=, complete_generation=Y) / minoperator;
 
 /* Call macro to switch separator by OS(Win or other) */
-%ex2pac_set_slash()
+%local slash ;
+%let slash=%ex2pac_set_slash() ;
 
 /* Check if excel file exists */
 data _null_;

@@ -2,17 +2,20 @@
 
 This is internal utility macro used in `%pac2ex`.
 
+Purpose:
+To create datasets by contents.
+
 *//*** HELP END ***/
 
 /*--macro used in pac2ex--*/
 %macro pac2ex_contents(contents=) ;
-data final_&contents;
+data _PAC2EX_FINAL_&contents;
 	attrib name      length=$32
 		help      length=$32767
 		body      length=$32767
 		location  length=8;
   retain help body '' flag 0 afterflag 0;
-  set &contents. end=eof;
+  set _PAC2EX_&contents. end=eof;
 
   name = "&contents" ;
   location = "" ;
