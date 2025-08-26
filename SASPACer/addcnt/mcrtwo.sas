@@ -1,4 +1,4 @@
- %macro mcrTwo(m=mcrOne);
+%macro mcrTwo(m=mcrOne);
 	%put **This is macro &sysmacroname.**;
 	%put **and I am calling the &m.**;
 	%&m.()
