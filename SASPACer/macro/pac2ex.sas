@@ -116,16 +116,16 @@ data _PAC2EX_DESCRIPTION1;
   c = compress(upcase(contents));
   drop c;
  
-  if c IN: ('TYPE'
-           'PACKAGE'
-           'TITLE'
-           'VERSION'
-           'AUTHOR'
-           'MAINTAINER'
-           'LICENSE'
-           'ENCODING'
-           'REQUIRED'
-           'REQPACKAGES')
+  if c IN: ('TYPE:'
+           'PACKAGE:'
+           'TITLE:'
+           'VERSION:'
+           'AUTHOR:'
+           'MAINTAINER:'
+           'LICENSE:'
+           'ENCODING:'
+           'REQUIRED:'
+           'REQPACKAGES:')
   then output;
 run;
 data _PAC2EX_DESCRIPTION2;
