@@ -50,9 +50,7 @@ SAS package folders and files.
 
   1. `%ex2pac` expects the operating system to be either Windows or a non-Windows environment
   (such as Linux, Unix, etc.). The `&SYSSCP` macro variable is used to identify the current OS.
-  Only tested in Windows.
-
-  2. Libref named `e2p_xls` is used in the macro.
+  2. Libref named `e2p_xls` and `XLSCHK` are used in the macro.
   3. Max length of 32767 bytes is the limit in both cells in excel and reference file(.sas) in location column
   due to limitations in excel cell max length and max length of SAS variables used in the macro.
 
@@ -182,20 +180,37 @@ data _null_;
 run;
 
 /* Create License */
-proc import
-	datafile="&excel_file."
-    out=license
-    dbms=xlsx
-    replace;
-    sheet="license";
-    getnames=no;
-run;
-data _null_;
-    set license;
-    file "&packagepath.&slash.license.sas";
-    /* output to .sas file */
-    put B ;
-run;
+libname XLSCHK xlsx "&excel_file."; /*check if license sheet exists*/
+proc sql;
+  create table _TMP_XLS as
+  select memname
+  from sashelp.vtable
+  where libname="XLSCHK";
+quit;
+
+%let license_flag = N ;
+data _null_ ;
+	set _TMP_XLS ;
+	if upcase(memname) = "LICENSE" then call symputx('license_flag', 'Y') ;
+run ;
+
+%if &license_flag. = Y %then %do ;
+	proc import
+		datafile="&excel_file."
+	    out=license
+	    dbms=xlsx
+	    replace;
+	    sheet="license";
+	    getnames=no;
+	run;
+	data _null_;
+	    set license;
+	    file "&packagepath.&slash.license.sas";
+	    /* output to .sas file */
+	    put B ;
+	run;
+%end ;
+libname XLSCHK clear ;
 
 /* Create folders(formats, macros, etc.) */
 libname e2p_xls xlsx "&excel_file.";

@@ -31,7 +31,7 @@ excel file with package information.
 
 ### Note:
 
-Only tested in Windows.
+Not applicable.
 
 ---
 *//*** HELP END ***/
