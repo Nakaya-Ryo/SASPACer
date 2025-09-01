@@ -54,11 +54,25 @@ Not applicable.
     %end;
 %end;
 
+    %local tempdir rc;
+
+    /* Set temporary directory path inside WORK */
+    %let tempdir=%sysfunc(getoption(work))%ex2pac_set_slash()%sysfunc(strip(PAC2EX));
+    data _null_;
+        length rc 8 dir $256;
+        dir = "&tempdir.";
+        if fileexist(dir) = 0 then
+            rc = dcreate("PAC2EX", "%sysfunc(pathname(work))");
+    run;
+    libname PAC2EX "&tempdir.";
+	/*--*/
+
+
 filename inzip zip "&zip_path";
 libname xlout xlsx "&xls_path";
 
 
-data _PAC2EX_TMP01;
+data PAC2EX._TMP01;
   length memname $256 ;
   fid = dopen("inzip");
 
@@ -87,8 +101,8 @@ data _PAC2EX_TMP01;
     end ;
   rc = dclose(fid);
 run ;
-data _PAC2EX_TMP01;
-  set _PAC2EX_TMP01;
+data PAC2EX._TMP01;
+  set PAC2EX._TMP01;
   /* change to start with _ if starting with 0-9 or else(which cannot be used for the first letter in dataname) */
   if not missing(contname) and not ( 
        'A' <= upcase(substr(contname, 1, 1)) <= 'Z'
@@ -97,22 +111,22 @@ data _PAC2EX_TMP01;
 run;
 /* create contents dataset by memname */
 data _null_;
-  set _PAC2EX_TMP01;
+  set PAC2EX._TMP01;
   if foldername in ("description","license") then do ;
 	  call execute(
-	    'data ' || '_PAC2EX_' || strip(foldername) || '; length contents $32767; infile inzip("' || strip(memname) || '") lrecl=32767 truncover; input contents $char32767.; run;'
+	    'data ' || 'PAC2EX.' || strip(foldername) || '; length contents $32767; infile inzip("' || strip(memname) || '") lrecl=32767 truncover; input contents $char32767.; run;'
 	  );
   end ;
   else do ;
 	  call execute(
-	    'data ' || '_PAC2EX_' || strip(contname) || '; length contents $32767; infile inzip("' || strip(memname) || '") lrecl=32767 truncover; input contents $char32767.; run;'
+	    'data ' || 'PAC2EX.' || strip(contname) || '; length contents $32767; infile inzip("' || strip(memname) || '") lrecl=32767 truncover; input contents $char32767.; run;'
 	  );
   end ;
 run;
 
 /* Description */
-data _PAC2EX_DESCRIPTION1;
-  set _PAC2EX_DESCRIPTION ;
+data PAC2EX.DESCRIPTION1;
+  set PAC2EX.DESCRIPTION ;
   c = compress(upcase(contents));
   drop c;
  
@@ -128,8 +142,8 @@ data _PAC2EX_DESCRIPTION1;
            'REQPACKAGES:')
   then output;
 run;
-data _PAC2EX_DESCRIPTION2;
-  set _PAC2EX_DESCRIPTION1;
+data PAC2EX.DESCRIPTION2;
+  set PAC2EX.DESCRIPTION1;
   colon_pos = index(contents, ':');
   if colon_pos > 0 then do;
     col1 = strip(scan(contents, 1, ":"));
@@ -137,8 +151,8 @@ data _PAC2EX_DESCRIPTION2;
     output;
   end;
 run;
-data _PAC2EX_DESCRIPTION_SECTION;
-  set _PAC2EX_DESCRIPTION;
+data PAC2EX.DESCRIPTION_SECTION;
+  set PAC2EX.DESCRIPTION;
   retain flag 0;
   if contents =: 'DESCRIPTION START:' then flag = 1;
   else if contents =: 'DESCRIPTION END:' then flag = 0;
@@ -146,10 +160,10 @@ data _PAC2EX_DESCRIPTION_SECTION;
     output;
   end;
 run;
-data _PAC2EX_COMBINED;
+data PAC2EX.COMBINED;
   length all_contents $32767;
   retain all_contents '';
-  set _PAC2EX_DESCRIPTION_SECTION end=eof;
+  set PAC2EX.DESCRIPTION_SECTION end=eof;
   col1= "Description" ;
 
   if all_contents = '' then
@@ -159,16 +173,16 @@ data _PAC2EX_COMBINED;
   if eof then output;
   keep col1 all_contents;
 run;
-data _PAC2EX_FINAL_DESCRIPTION ;
-	set _PAC2EX_DESCRIPTION2 _PAC2EX_COMBINED(rename=(all_contents=col2)) ;
+data PAC2EX.DESCRIPTION ;
+	set PAC2EX.DESCRIPTION2 PAC2EX.COMBINED(rename=(all_contents=col2)) ;
 	keep col1 col2 ;
 run ;
 
 /* License */
-data _PAC2EX_FINAL_LICENSE ;
+data PAC2EX.LICENSE ;
   attrib col1 length=$10. col2 length=$32767. ; 
   retain col2 '';
-  set _PAC2EX_LICENSE end=eof;
+  set PAC2EX.LICENSE end=eof;
   col1= "License" ;
 
   if col2 = '' then
@@ -181,7 +195,7 @@ run;
 
 /* macros and other contents (running pac2ex_contents macro) */
 data _null_;
-  set _PAC2EX_TMP01;
+  set PAC2EX._TMP01;
   if not missing(contname) then do;
     call execute(cats('%pac2ex_contents(contents=', contname, ');'));
   end;
@@ -190,14 +204,14 @@ run;
 /* get unique foldername */
 proc sql noprint;
     select distinct foldername into :folders separated by ' '
-    from _PAC2EX_TMP01(where=(foldername not in ("description","license")));
+    from PAC2EX._TMP01(where=(foldername not in ("description","license")));
 quit;
 
 /* output to sheets */
 %pac2ex_folder2sheet()
 libname xlout clear;
 
-proc export data=_PAC2EX_FINAL_DESCRIPTION(keep=col1 col2)
+proc export data=PAC2EX.DESCRIPTION(keep=col1 col2)
     outfile="&xls_path"
     dbms=xlsx
     replace 
@@ -205,7 +219,7 @@ proc export data=_PAC2EX_FINAL_DESCRIPTION(keep=col1 col2)
     sheet="description";
 	putnames=no ;
 run;
-proc export data=_PAC2EX_FINAL_LICENSE(keep=col1 col2)
+proc export data=PAC2EX.LICENSE(keep=col1 col2)
     outfile="&xls_path"
     dbms=xlsx
 	replace
@@ -222,9 +236,8 @@ data _null_;
 run;
 filename bakfile clear;
 
-%if &kill=Y %then %do ;
-proc datasets library=WORK nolist ;
-  delete _PAC2EX_: ;
+%if &kill=Y %then %do ; /* delete all datasets in PAC2EX */
+proc datasets library=PAC2EX kill nolist ;
 run ; quit ;
 %end ;
 

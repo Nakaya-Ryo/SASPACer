@@ -9,13 +9,13 @@ To create datasets by contents.
 
 /*--macro used in pac2ex--*/
 %macro pac2ex_contents(contents=) ;
-data _PAC2EX_FINAL_&contents;
+data PAC2EX.&contents;
 	attrib name      length=$32
 		help      length=$32767
 		body      length=$32767
 		location  length=8;
   retain help body '' flag 0 afterflag 0;
-  set _PAC2EX_&contents. end=eof;
+  set PAC2EX.&contents. end=eof;
 
   name = "&contents" ;
   location = "" ;

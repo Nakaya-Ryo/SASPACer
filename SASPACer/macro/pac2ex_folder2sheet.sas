@@ -19,7 +19,7 @@ To output contents into excel sheet.
         /* obtain contname for foldername */
         proc sql noprint;
             select contname into :contnames separated by ' '
-            from _PAC2EX_TMP01
+            from PAC2EX._TMP01
             where foldername = "&fname" and not missing(contname);
         quit;
 
@@ -28,7 +28,7 @@ To output contents into excel sheet.
         %let setstmt = ;
         %do j = 1 %to &nmacros;
             %let macroj = %scan(&contnames, &j, %str( ));
-            %let setstmt = &setstmt _PAC2EX_FINAL_&macroj;
+            %let setstmt = &setstmt PAC2EX.&macroj;
         %end;
 		
 		/* output */
