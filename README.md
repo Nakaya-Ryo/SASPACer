@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.3.4 on 2September2025)
+# SASPACer (latest version 0.3.5 on 4October2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -37,7 +37,8 @@ Sample code:
 ~~~
 
 ## Version history  
-0.3.4(2September2025)	: Modified to allow at most 32bytes name of contents(macros) in %pac2ex  
+0.3.5(4October2025) : Added tests to source package and added test_example.xlsx in addcnt    
+0.3.4(2September2025) : Modified to allow at most 32bytes name of contents(macros) in %pac2ex  
 0.3.3(28August2025)	: Modified to allow not having license sheet in %ex2pac  
 0.3.2(26August2025)	: Minor updates in %pac2ex  
 0.3.1(26August2025)	: Polished overall codes. Added overwrite= argument in %pac2ex  
