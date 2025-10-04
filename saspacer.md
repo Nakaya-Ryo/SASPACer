@@ -9,32 +9,31 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.3.4
-- Generated: 2025-09-02T07:48:41
+- Version: 0.3.5
+- Generated: 2025-10-04T16:03:05
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*D8C1100EC4530FC375E742F32A97823488118E143386E3656EEAB34F90D7658B` for this version
-- Content SHA256: `C*6706384EC400074730FF7D2D71FF6FD59963FF0EA2498ED6D7B49B41DA9E9EE5` for this version
+- File SHA256: `F*9B1755E878D83C9BE359AD876F6FE059947DA8A2E99FBE388126DF7F2DE21E72` for this version
+- Content SHA256: `C*E45F210B745902A400C7A309B0C2C6155C065ED695DE15C714BC21099FE7F105` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.3.4`;
+# The `SASPACer` package, version: `0.3.5`;
   
 ---
  
 
 ### SASPACer ###
 
-This is a package for easily creating SAS packages.
+SASPACer is a package for easily creating SAS packages.
 
-All you need is to fill package information in the template excel 
-(you can find it in additional contents).
+All you need is to fill package information in the template excel file (you can find it in additional contents).  
 `SASPACer` has a macro(`%ex2pac()`) to convert excel with package information into
 SAS package folders and files, and generate SAS package using the `%generatePackage()`
 macro (the generation is optional but executed by default).
 
-macro(`%pac2ex()`) can convert package zip file into excel file with package information as well.
+macro(`%pac2ex()`) can convert package zip file into excel file with package information.
 
 list of macros:  
 - `%ex2pac()`  
@@ -95,14 +94,14 @@ SAS package folders and files.
 
 ### Parameters
 
-  - `excel_file` : full path for excel file which contains package information
+  - `excel_file` (required) : full path for excel file which contains package information
 
-  - `package_location` : location where package files to be stored.
+  - `package_location` (required) : location where package files to be stored.
                                Subfolder named package name will be created
                                under the location.
 
-  - `complete_generation` (default=Y) : If user want to create only package structure, 
-                                        please change complete_generation=N.
+  - `complete_generation` (option) : If user want to create only package structure, 
+                                        change complete_generation=N. (default is Y)   
                                         By default, `%ex2pac` execute `%generatePackage()` 
                                         to create .zip and .md.
 
@@ -187,15 +186,19 @@ excel file with package information.
 
 ### Parameters
 
-  - `zip_path` : full path for package zip file
-  - `xls_path` : full path for excel file to output
-  - `overwrite` : N for not overwriting (default is Y)
-  - `kill` : Y for kill all datasets in WORK (default is N)
+  - `zip_path` (required) : full path for package zip file
+
+  - `xls_path` (required) : full path for excel file to output
+
+  - `overwrite` (option) : N for not overwriting (default is Y)
+
+  - `kill` (option) : Y for kill all datasets in PAC2EX library created during
+    `%pac2ex` (default is N)
 
 ### Flow of the `%pac2ex` macro
 
   1. Scan package ZIP contents
-  2. Read each ZIP entry line-by-line into _PAC2EX_xxx datasets
+  2. Read each ZIP entry line-by-line into PAC2EX.xxx datasets
   3. Process DESCRIPTION and LICENSE
   4. Process macros/contents calling `%pac2ex_contents`
   5. Export to Excel sheets calling `%pac2ex_folder2sheet`
