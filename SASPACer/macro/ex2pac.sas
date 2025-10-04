@@ -5,14 +5,14 @@ SAS package folders and files.
 
 ### Parameters
 
-  - `excel_file` : full path for excel file which contains package information
+  - `excel_file` (required) : full path for excel file which contains package information
 
-  - `package_location` : location where package files to be stored.
+  - `package_location` (required) : location where package files to be stored.
                                Subfolder named package name will be created
                                under the location.
 
-  - `complete_generation` (default=Y) : If user want to create only package structure, 
-                                        please change complete_generation=N.
+  - `complete_generation` (option) : If user want to create only package structure, 
+                                        change complete_generation=N. (default is Y)   
                                         By default, `%ex2pac` execute `%generatePackage()` 
                                         to create .zip and .md.
 

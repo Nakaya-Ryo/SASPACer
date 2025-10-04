@@ -1,7 +1,7 @@
 Type: Package
 Package: SASPACer
 Title: SASPACer to create SAS package using excel file
-Version: 0.3.4
+Version: 0.3.5
 Author: Ryo Nakaya (nakaya.ryou@gmail.com)
 Maintainer: Ryo Nakaya (nakaya.ryou@gmail.com)
 License: MIT
@@ -12,15 +12,14 @@ DESCRIPTION START:
 
 ### SASPACer ###
 
-This is a package for easily creating SAS packages.
+SASPACer is a package for easily creating SAS packages.
 
-All you need is to fill package information in the template excel 
-(you can find it in additional contents).
+All you need is to fill package information in the template excel file (you can find it in additional contents).  
 `SASPACer` has a macro(`%ex2pac()`) to convert excel with package information into
 SAS package folders and files, and generate SAS package using the `%generatePackage()`
 macro (the generation is optional but executed by default).
 
-macro(`%pac2ex()`) can convert package zip file into excel file with package information as well.
+macro(`%pac2ex()`) can convert package zip file into excel file with package information.
 
 list of macros:  
 - `%ex2pac()`  

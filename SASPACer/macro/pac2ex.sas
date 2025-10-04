@@ -5,15 +5,19 @@ excel file with package information.
 
 ### Parameters
 
-  - `zip_path` : full path for package zip file
-  - `xls_path` : full path for excel file to output
-  - `overwrite` : N for not overwriting (default is Y)
-  - `kill` : Y for kill all datasets in WORK (default is N)
+  - `zip_path` (required) : full path for package zip file
+
+  - `xls_path` (required) : full path for excel file to output
+
+  - `overwrite` (option) : N for not overwriting (default is Y)
+
+  - `kill` (option) : Y for kill all datasets in PAC2EX library created during
+    `%pac2ex` (default is N)
 
 ### Flow of the `%pac2ex` macro
 
   1. Scan package ZIP contents
-  2. Read each ZIP entry line-by-line into _PAC2EX_xxx datasets
+  2. Read each ZIP entry line-by-line into PAC2EX.xxx datasets
   3. Process DESCRIPTION and LICENSE
   4. Process macros/contents calling `%pac2ex_contents`
   5. Export to Excel sheets calling `%pac2ex_folder2sheet`
