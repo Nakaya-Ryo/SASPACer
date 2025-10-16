@@ -1,4 +1,4 @@
-# SASPACer (latest version 0.3.5 on 4October2025)
+# SASPACer (latest version 0.3.6 on 16Oct2025)
 A SAS package to help creating SAS packages
 
 ![logo](https://github.com/Nakaya-Ryo/SASPACer/blob/main/saspacer_logo_small.png)
@@ -33,10 +33,11 @@ Sample code:
 	zip_path=C:\Temp\packagename.zip,		/* Path of package zip file */
 	xls_path=C:\Temp\package_info.xlsx,		/* Output excel path */
 	overwrite=N,				/* Set N not to overwrite (default is Y) */
-	kill=Y)						/* Set Y to delete all datasets in WORK (default is N) */
+	kill=Y)						/* Set Y to delete all datasets in PAC2EX lib in WORK (default is N) */
 ~~~
 
 ## Version history  
+0.3.6(16October2025) : Modified template_package.xlsx in addcnt to have template help   
 0.3.5(4October2025) : Added tests to source package and added test_example.xlsx in addcnt    
 0.3.4(2September2025) : Modified to allow at most 32bytes name of contents(macros) in %pac2ex  
 0.3.3(28August2025)	: Modified to allow not having license sheet in %ex2pac  
