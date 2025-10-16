@@ -9,17 +9,17 @@
 ### Version information:
   
 - Package: SASPACer
-- Version: 0.3.5
-- Generated: 2025-10-04T16:03:05
+- Version: 0.3.6
+- Generated: 2025-10-16T20:25:52
 - Author(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - Maintainer(s): Ryo Nakaya (nakaya.ryou@gmail.com)
 - License: MIT
-- File SHA256: `F*9B1755E878D83C9BE359AD876F6FE059947DA8A2E99FBE388126DF7F2DE21E72` for this version
-- Content SHA256: `C*E45F210B745902A400C7A309B0C2C6155C065ED695DE15C714BC21099FE7F105` for this version
+- File SHA256: `F*B97036EAE02CC83013B0FE2AFF63556385D464CEBD8F33D009DAD06621C4C14C` for this version
+- Content SHA256: `C*E9294BC897EB5817BDED91548767BD7C9FC0AE71A86256DFA080EE9EF7671FCA` for this version
   
 ---
  
-# The `SASPACer` package, version: `0.3.5`;
+# The `SASPACer` package, version: `0.3.6`;
   
 ---
  
