@@ -1,0 +1,7 @@
+{
+  "bundle": "t002_pac2ex_description_license",
+  "source_file": "SASPACer/macro/pac2ex.sas",
+  "source_blob_sha": "78b0bcacaf1f938dfc1ba61cb5389c593013f059",
+  "source_commit": "f1260808ad4ee5dc54ae84e3a0a8ea363bd98167",
+  "notes": "Reproduces the DESCRIPTION/LICENSE parsing DATA steps from %pac2ex() unmodified (inlined). Seeds PAC2EX.DESCRIPTION and PAC2EX.LICENSE with SASPACer's own description.sas (blob a7228aac030ac66f9b630a25d09ecbffb46257d5) and license.txt (blob 6cb2f847c6580a75ef50293164e4edfef6de8bf2) content, matching the shape %pac2ex()'s zip-scan step produces."
+}

@@ -1,0 +1,17 @@
+{
+  "_captured_at": "2026-07-16T08:44:25.379840Z",
+  "_captured_run_id": "r_eec55a98b31b4dd193f9b1075d164240",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: Function hellofun stored to work.funcs.simple."
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

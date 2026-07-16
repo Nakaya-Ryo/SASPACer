@@ -1,0 +1,7 @@
+{
+  "bundle": "t005_simple_example_macros",
+  "source_file": "SASPACer/addcnt/simple_example.xlsx",
+  "source_blob_sha": "2135866c0c00c10593ead16fce88b012915dcb64",
+  "source_commit": "f1260808ad4ee5dc54ae84e3a0a8ea363bd98167",
+  "notes": "myhello, myhello2, and hellofun macro/function bodies extracted verbatim from simple_example.xlsx's shared-strings table (the template file SASPACer's README says can be tested as-is) and run in sequence, unmodified."
+}

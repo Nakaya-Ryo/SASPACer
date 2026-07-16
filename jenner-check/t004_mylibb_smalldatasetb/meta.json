@@ -1,0 +1,7 @@
+{
+  "bundle": "t004_mylibb_smalldatasetb",
+  "source_file": "SASPACer/addcnt/mylibb.sas, SASPACer/addcnt/smalldatasetb.sas",
+  "source_blob_sha": "7a9e1c01217cea43ef44e3bc9107ee56e682324d (mylibb.sas), 78e08d4fb60d56d7ce3c62b396af0fb890f3d497 (smalldatasetb.sas)",
+  "source_commit": "f1260808ad4ee5dc54ae84e3a0a8ea363bd98167",
+  "notes": "smalldatasetb.sas and the fmtNum format (extracted from template_package.xlsx's shared strings, blob 2135866c0c00c10593ead16fce88b012915dcb64) are unmodified. mylibb.sas assigns its library via the LIBNAME() DATA step function, which Jenner does not yet implement -- substituted with the equivalent LIBNAME statement (same libref, path, engine)."
+}

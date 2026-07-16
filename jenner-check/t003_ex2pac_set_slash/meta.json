@@ -1,0 +1,7 @@
+{
+  "bundle": "t003_ex2pac_set_slash",
+  "source_file": "SASPACer/macro/ex2pac_set_slash.sas",
+  "source_blob_sha": "ff4f23a94aab8adcc87eefcad18efc2e410f16f4",
+  "source_commit": "f1260808ad4ee5dc54ae84e3a0a8ea363bd98167",
+  "notes": "The full %ex2pac_set_slash() macro, logic unchanged. Inline comments inside the %if/%then/%do chain were relocated outside it (cosmetic only) to route around a separate comment-placement macro-parsing issue observed during self-check; the macro's branching and returned value are identical to the source. Demonstrates the same catx()-based path-building %ex2pac() does with the resolved separator."
+}

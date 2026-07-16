@@ -1,0 +1,18 @@
+{
+  "_captured_at": "2026-07-16T08:44:25.331364Z",
+  "_captured_run_id": "r_ead3c788b09c4e7bb0e6853e5d9a87f2",
+  "status": "ok",
+  "exit_code": 0,
+  "log_contains": [
+    "NOTE: SYSSCP resolved to LIN.",
+    "NOTE: full_path = SAS_PACKAGES/packages/SASPACer"
+  ],
+  "log_does_not_contain": [
+    "ERROR:",
+    "[JENNER-ERROR"
+  ],
+  "diagnostics": {
+    "parse_warnings": [],
+    "runtime_warnings": []
+  }
+}

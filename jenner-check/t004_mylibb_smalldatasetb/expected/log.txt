@@ -1,0 +1,18 @@
+NOTE: Jenner v1.5.30 (build v1.5.30+unknown.20260715T062217Z.x86_64-unknown-linux-gnu)
+
+NOTE: Option OBS changed to 100.
+NOTE: PROC FORMAT library=WORK
+
+NOTE: FORMAT fmtnum defined (4 ranges).
+NOTE: Library MYLIBB assigned path=/tmp/work/r_0156cb55cede42e4b6cb90696e5497c9/work/7ce2d832-4736-482b-9db8-c874e1841c58.
+NOTE: DATA myLibB.smallDatasetB
+
+
+NOTE: Wrote myLibB.smallDatasetB (4 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option TITLE changed to myLibB.smallDatasetB -- SASPACer's own addcnt/smalldatasetb.sas example, run unmodified.
+NOTE: PROC PRINT data=myLibB.smallDatasetB
+
+NOTE: PROC PRINT completed: 4 observations printed, 2 variables
