@@ -1,0 +1,7 @@
+{
+  "bundle": "t001_pac2ex_contents",
+  "source_file": "SASPACer/macro/pac2ex_contents.sas",
+  "source_blob_sha": "c26256d34ad03f061bf657fcc893e05eeb6008e8",
+  "source_commit": "f1260808ad4ee5dc54ae84e3a0a8ea363bd98167",
+  "notes": "Reproduces %pac2ex_contents() unmodified (inlined -- the runner has no %include support). Seeds PAC2EX.f2 with SASPACer/addcnt/f2.sas (blob 796da8f42a6ac88b22b84d4193fe4e2e6f764ef1) preceded by the HELP markers %pac2ex() writes ahead of a package member's body, matching the zip-scan input shape %pac2ex_contents() actually reads. Exercises the help/body split logic against real content."
+}

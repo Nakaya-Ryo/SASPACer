@@ -1,0 +1,10 @@
+                myLibB.smallDatasetB -- SASPACer's own addcnt/smalldatasetb.sas example, run unmodified
+
+
+ n         m
+--  --------
+ .  missing
+-1  negative
+ 0  zero
+ 1  positive
+

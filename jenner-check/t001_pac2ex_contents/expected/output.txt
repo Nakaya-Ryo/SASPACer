@@ -1,0 +1,12 @@
+                   PAC2EX.f2 after pac2ex_contents -- SASPACer own addcnt/f2.sas split into help/body
+
+
+name
+----
+f2
+
+                   PAC2EX.f2 after pac2ex_contents -- SASPACer own addcnt/f2.sas split into help/body
+
+name  help_len  body_len  body
+----  --------  --------  ----
+  f2         7                

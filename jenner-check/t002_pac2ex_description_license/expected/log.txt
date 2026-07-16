@@ -1,0 +1,79 @@
+NOTE: Jenner v1.5.30 (build v1.5.30+unknown.20260715T062217Z.x86_64-unknown-linux-gnu)
+
+NOTE: Option OBS changed to 100.
+NOTE: Library PAC2EX assigned path=/tmp/work/r_bbe72d1d40e845a5a06168664e534a02/work/5e009d68-24e3-47d8-83d7-1e7c2020c2dc.
+NOTE: DATA PAC2EX.DESCRIPTION
+
+NOTE: Processing inline DATALINES (15 lines)
+
+NOTE: Read 15 rows from DATALINES.
+NOTE: Wrote PAC2EX.DESCRIPTION (15 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.LICENSE
+
+NOTE: Processing inline DATALINES (9 lines)
+
+NOTE: Read 9 rows from DATALINES.
+NOTE: Wrote PAC2EX.LICENSE (9 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.DESCRIPTION1
+
+
+NOTE: Read 15 rows from PAC2EX.DESCRIPTION.
+NOTE: Wrote PAC2EX.DESCRIPTION1 (9 rows, 1 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.DESCRIPTION2
+
+
+NOTE: Read 9 rows from PAC2EX.DESCRIPTION1.
+NOTE: Wrote PAC2EX.DESCRIPTION2 (9 rows, 4 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.DESCRIPTION_SECTION
+
+
+NOTE: Read 15 rows from PAC2EX.DESCRIPTION.
+NOTE: Wrote PAC2EX.DESCRIPTION_SECTION (4 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.COMBINED
+
+
+NOTE: Read 4 rows from PAC2EX.DESCRIPTION_SECTION.
+NOTE: Wrote PAC2EX.COMBINED (1 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.DESCRIPTION_FINAL
+
+
+NOTE: Read 9 rows from PAC2EX.DESCRIPTION2.
+NOTE: Read 10 rows from PAC2EX.COMBINED.
+NOTE: Wrote PAC2EX.DESCRIPTION_FINAL (10 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: DATA PAC2EX.LICENSE_FINAL
+
+
+NOTE: Read 9 rows from PAC2EX.LICENSE.
+NOTE: Wrote PAC2EX.LICENSE_FINAL (1 rows, 2 columns).
+NOTE: DATA elapsed:
+  wall  0.00 seconds
+  cpu   0.00 seconds
+NOTE: Option TITLE changed to PAC2EX.DESCRIPTION_FINAL -- key/value rows parsed out of SASPACer's own description.sas.
+NOTE: PROC PRINT data=PAC2EX.DESCRIPTION_FINAL
+
+NOTE: PROC PRINT completed: 10 observations printed, 2 variables
+NOTE: Option TITLE changed to PAC2EX.LICENSE_FINAL -- SASPACer's own license.txt collapsed to one row.
+NOTE: PROC PRINT data=PAC2EX.LICENSE_FINAL
+
+NOTE: PROC PRINT completed: 1 observations printed, 2 variables
